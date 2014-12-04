@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style type="text/css">
+      html, body, #map-canvas { height: 100%; margin: 0; padding: 0;}
+    </style>
+    <script type="text/javascript"
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCyCAaV9LeOo9rGEsr8Zhjhp9UySDKrBUs">
+    </script>
+    <script type="text/javascript">
+      function initialize() {
+        var mapOptions = {
+          center: { lat: 25.046, lng: 121.547},
+          zoom: 13
+        };
+        var map = new google.maps.Map(document.getElementById('map-canvas'),
+            mapOptions);
+        var styles = [
+  {
+    "elementType": "geometry.fill",
+    "stylers": [
+      { "saturation": -58 },
+      { "lightness": 49 },
+      { "hue": "#00fff7" },
+      { "invert_lightness": true }
+    ]
+  },{
+    "elementType": "geometry.stroke",
+    "stylers": [
+      { "hue": "#ff0066" },
+      { "saturation": -83 },
+      { "color": "#799980" },
+      { "lightness": -49 },
+      { "gamma": 0.93 },
+      { "weight": 0.2 }
+    ]
+  },{
+    "elementType": "labels.text.stroke",
+    "stylers": [
+      { "weight": 0.1 },
+      { "visibility": "simplified" }
+    ]
+  },{
+    "elementType": "labels.text.fill",
+    "stylers": [
+      { "color": "#ffffff" }
+    ]
+  },{
+    "featureType": "water",
+    "elementType": "geometry.fill",
+    "stylers": [
+      { "lightness": 12 },
+      { "gamma": 0.6 },
+      { "color": "#314862" }
+    ]
+  },{
+    "elementType": "geometry.stroke",
+    "stylers": [
+      { "color": "#808061" },
+      { "visibility": "on" }
+    ]
+  },{
+    "featureType": "road.local",
+    "stylers": [
+      { "gamma": 0.4 },
+      { "hue": "#00ff4d" },
+      { "color": "#80a080" },
+      { "lightness": -71 }
+    ]
+  }
+];
+      
+      map.setOptions({styles: styles});
+      }
+      google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+  </head>
+  <body>
+<div id="map-canvas"></div>
+  </body>
+</html>
